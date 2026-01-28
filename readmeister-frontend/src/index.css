@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------
+   RESET & BASE STYLES
+--------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------
+   CUSTOM ROOT COLORS & VARIABLES
+--------------------------------------------- */
+@layer base {
+  :root {
+    /* Light mode colors */
+    --background: 240 10% 98%; 
+    --foreground: 252 100% 13%;
+
+    --primary: 252 100% 60%;
+    --primary-foreground: 240 100% 99%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 252 100% 13%;
+
+    --muted: 240 8% 90%;
+    --muted-foreground: 240 10% 30%;
+
+    --accent: 240 6% 95%;
+    --accent-foreground: 252 100% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 240 100% 99%;
+
+    --border: 240 8% 85%;
+    --input: 240 8% 85%;
+    --ring: 252 100% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode colors */
+  .dark {
+    --background: 240 10% 10%;
+    --foreground: 240 100% 99%;
+
+    --primary: 252 100% 60%;
+    --primary-foreground: 240 100% 99%;
+
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 240 100% 99%;
+
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 70%;
+
+    --accent: 240 10% 25%;
+    --accent-foreground: 240 100% 99%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 240 100% 99%;
+
+    --border: 240 10% 25%;
+    --input: 240 10% 25%;
+    --ring: 252 100% 60%;
+  }
+
+  /* Apply border using CSS variable instead of non-existent Tailwind class */
+  /* * {
+    border: 1px solid hsl(var(--border));
+  } */
+}
+
+/* ---------------------------------------------
+   ANIMATIONS
+--------------------------------------------- */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ---------------------------------------------
+   TRANSITIONS
+--------------------------------------------- */
+.transition-all {
+  transition-duration: 200ms;
+}
