@@ -4,7 +4,7 @@ export default function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:1001/api/user2", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user2`, {
       credentials: "include",
     })
       .then(res => res.json())
@@ -14,7 +14,7 @@ export default function Profile() {
 
   
   const logout = () => {
-    window.location.href = "http://localhost:1001/logout";
+    window.location.href =`${import.meta.env.VITE_BACKEND_URL}/logout`;
   };
 
   if (!user) return <p>Loading profile...</p>;

@@ -15,7 +15,7 @@ export default function DashboardContent() {
 
   // Fetch user's GitHub repos
   useEffect(() => {
-    fetch("http://localhost:1001/api/github/repos", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/github/repos`, {
       credentials: "include",
     })
       .then((res) => res.json())

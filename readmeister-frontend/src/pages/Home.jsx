@@ -36,7 +36,7 @@ useEffect(() => {
 }, [location.state])
 
 useEffect(() => {
-  fetch("http://localhost:1001/api/user", {
+  fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user`, {
     credentials: "include"
   })
     .then(res => {
@@ -54,7 +54,7 @@ useEffect(() => {
 
   // Fetch user repos
   useEffect(() => {
-    fetch("http://localhost:1001/api/github/repos", {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/github/repos`, {
       method: "GET",
       credentials: "include",
     })
@@ -77,7 +77,7 @@ useEffect(() => {
     if (!selectedRepo) return;
 
     setLoadingReadme(true);
-    fetch(`http://localhost:1001/api/github/repos/${selectedRepo}/readme`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/github/repos/${selectedRepo}/readme`, {
       method: "GET",
       credentials: "include",
     })
@@ -94,7 +94,7 @@ useEffect(() => {
   const handlePush = () => {
     if (!selectedRepo) return;
     setSaving(true);
-    fetch(`http://localhost:1001/api/github/repos/${selectedRepo}/readme/push`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/github/repos/${selectedRepo}/readme/push`, {
       method: "PUT",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -124,7 +124,7 @@ useEffect(() => {
     if (!selectedRepo) return;
     setGenerating(true);
 
-    fetch(`http://localhost:1001/api/github/repos/${selectedRepo}/generate`, {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/github/repos/${selectedRepo}/generate`, {
       method: "POST",
       credentials: "include",
     })
