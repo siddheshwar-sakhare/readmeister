@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/readmeister.iml" filepath="$PROJECT_DIR$/.idea/readmeister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readmeister/readmeister.iml" filepath="$PROJECT_DIR$/readmeister/readmeister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/readmeister-backend.iml" filepath="$PROJECT_DIR$/.idea/readmeister-backend.iml" />
     </modules>
   </component>
 </project>
