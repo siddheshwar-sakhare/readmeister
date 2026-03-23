@@ -20,11 +20,9 @@ const SignIn = () => {
       navigate("/home");
     }
   }, [navigate]);
-
-  const handleGitHubLogin = () => {
-    // Redirect to Spring Boot backend for GitHub OAuth
-    window.location.href = "http://localhost:1001/oauth2/authorization/github";
-  };
+const handleGitHubLogin = () => {
+  window.location.href = `${import.meta.env.VITE_BACKEND_URL}/oauth2/authorization/github`;
+};
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
