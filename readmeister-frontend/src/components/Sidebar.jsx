@@ -1,4 +1,4 @@
-import { FileText, User } from "lucide-react";
+import { FileText, User, Search } from "lucide-react";
 
 export default function Sidebar({ active, setActive }) {
   return (
@@ -13,6 +13,14 @@ export default function Sidebar({ active, setActive }) {
           ${active === "repos" ? "bg-purple-200 font-semibold" : "hover:bg-gray-100"}`}>
           <FileText size={20} />
           Generate README
+        </button>
+
+        <button onClick={() => setActive("analyzer")}
+        className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-purple-200
+        ${active === "analyzer" ? "bg-purple-200 font-semibold" : "hover:bg-gray-100"}`}
+        >
+          <Search size={20} />
+          Repo Analyzer
         </button>
 
         <button onClick={() => setActive("profile")}

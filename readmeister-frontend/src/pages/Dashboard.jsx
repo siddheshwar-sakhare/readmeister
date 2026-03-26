@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "../components/Sidebar.jsx";
 import RecentRepos from "../components/DashboardContent.jsx";
 import Profile from "./Profile.jsx";
+import RepositoryAnalyzer from "../components/RepositoryAnalyzer.jsx";
 
 
 export default function Dashboard() {
@@ -13,6 +14,7 @@ export default function Dashboard() {
 
       <div className="flex-1 p-8">
         {active === "repos" && <RecentRepos />}
+        {active === "analyzer" && <RepositoryAnalyzer />}
         {active === "profile" && <Profile />}
       </div>
     </div>
